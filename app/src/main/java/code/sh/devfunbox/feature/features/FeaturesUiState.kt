@@ -1,11 +1,13 @@
 package code.sh.devfunbox.feature.features
 
+import code.sh.devfunbox.domain.model.ScreenModel
+
 data class FeaturesUiState(
-    val title: String
+    val screens: List<ScreenModel>
 ) {
     companion object {
         fun init() = FeaturesUiState(
-            title = "Features Screen"
+            screens = emptyList()
         )
     }
 }
