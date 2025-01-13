@@ -1,4 +1,4 @@
-package code.sh.devfunbox.ui.theme
+package code.sh.devfunbox.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
