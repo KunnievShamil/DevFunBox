@@ -1,23 +1,21 @@
 package code.sh.devfunbox.feature.root
 
-import androidx.lifecycle.viewModelScope
 import code.sh.devfunbox.core.ui.base.BaseViewModel
 import code.sh.devfunbox.domain.repository.RootRepository
 import code.sh.devfunbox.feature.features.FeaturesScreen
-import code.sh.devfunbox.feature.features.FeaturesUiEvent
-import kotlinx.coroutines.launch
 
 class RootViewModel(
     private val rootRepository: RootRepository
-) : BaseViewModel<Unit, FeaturesUiEvent>(Unit) {
+) : BaseViewModel<Unit, RootUiEvent>(Unit) {
 
     init {
-        navigateTo()
+        navigateToFeaturesScreen()
     }
 
-    private fun navigateTo() {
-        viewModelScope.launch {
-            mutableEvent.send(FeaturesUiEvent.NavigateTo(FeaturesScreen()))
+    private fun navigateToFeaturesScreen() {
+        val screens = rootRepository.getScreens()
+        launchCoroutine {
+            mutableEvent.send(RootUiEvent.NavigateTo(FeaturesScreen(screens)))
         }
     }
 }

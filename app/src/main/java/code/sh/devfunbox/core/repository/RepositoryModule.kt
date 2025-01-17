@@ -6,6 +6,8 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
     factory<RootRepository> {
-        RootRepositoryImpl()
+        RootRepositoryImpl(
+            screenStorage = get()
+        )
     }
 }

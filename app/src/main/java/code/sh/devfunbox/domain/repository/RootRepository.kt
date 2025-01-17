@@ -1,3 +1,7 @@
 package code.sh.devfunbox.domain.repository
 
-interface RootRepository
+import code.sh.devfunbox.domain.model.ScreenModel
+
+interface RootRepository {
+    fun getScreens(): List<ScreenModel>
+}

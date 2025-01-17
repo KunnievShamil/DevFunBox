@@ -5,7 +5,6 @@ import androidx.compose.runtime.LaunchedEffect
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import code.sh.devfunbox.core.ui.base.BaseScreen
-import code.sh.devfunbox.feature.features.FeaturesUiEvent
 import org.koin.compose.viewmodel.koinViewModel
 
 class RootScreen : BaseScreen() {
@@ -20,7 +19,7 @@ class RootScreen : BaseScreen() {
         LaunchedEffect(Unit) {
             viewModel.event.collect { event ->
                 when (event) {
-                    is FeaturesUiEvent.NavigateTo -> navigator.push(event.screen)
+                    is RootUiEvent.NavigateTo -> navigator.push(event.screen)
                 }
             }
         }
