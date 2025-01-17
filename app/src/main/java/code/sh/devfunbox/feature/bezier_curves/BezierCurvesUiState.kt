@@ -1,11 +1,20 @@
 package code.sh.devfunbox.feature.bezier_curves
 
+import androidx.compose.ui.geometry.Offset
+import code.sh.devfunbox.domain.model.CircleModel
+
 data class BezierCurvesUiState(
-    val title: String
+    val handle: Offset,
+    val circles: List<CircleModel>,
+    val oDragCircleId: Int?,
+    val isShowCircle: Boolean
 ) {
     companion object {
         fun init() = BezierCurvesUiState(
-            title = "Кривые безье"
+            handle = Offset.Zero,
+            circles = emptyList(),
+            oDragCircleId = null,
+            isShowCircle = true
         )
     }
 }
