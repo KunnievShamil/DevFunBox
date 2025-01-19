@@ -64,7 +64,7 @@ class FeaturesScreen(private val screens: List<ScreenModel>) : BaseScreen() {
                         ) {
 
                             Text(
-                                text = "$index",
+                                text = "${index + 1}",
                                 fontSize = 18.sp
                             )
 
