@@ -15,6 +15,7 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.bottomSheet.BottomSheetNavigator
 import code.sh.devfunbox.core.ui.theme.DevFunBoxTheme
 import code.sh.devfunbox.feature.root.RootScreen
+import code.sh.devfunbox.feature.snake.SnakeScreen
 
 private const val NAVIGATOR_KEY = "AppContentNavigator"
 
@@ -38,7 +39,7 @@ private fun AppContent() {
                     .windowInsetsPadding(WindowInsets.systemBars)
             ) {
                 Navigator(
-                    screen = RootScreen(),
+                    screen = SnakeScreen(),
                     key = NAVIGATOR_KEY
                 )
             }
